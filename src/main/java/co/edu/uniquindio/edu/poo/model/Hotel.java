@@ -1,7 +1,7 @@
 package co.edu.uniquindio.edu.poo.model;
 import java.util.ArrayList;
 
-public class Hotel { /
+public class Hotel {
 
     private String nombre;
     private String nit;
