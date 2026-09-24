@@ -1,70 +1,63 @@
 package co.edu.uniquindio.edu.poo.model;
 
-public class Habitacion {
+public class Habitacion { // singular, el nombre de la clase debe ser la primer letra en mayuscula
+
 
     private String numeroHabitacion;
-    private String tipoHabitacion;
+    private String tipoHabitacion; // Individual, Doble o Suite
     private byte piso;
     private byte capacidadPersonas;
-    private int precio;
-    private String estado;
+    private double precio; // precio por noche
+    private String estado; // Disponible, Reservada, Ocupada o Mantenimiento
+
 
     public Habitacion(String numeroHabitacion, String tipoHabitacion, byte piso,
-                      byte capacidadPersonas, int precio, String estado) {
+                      byte capacidadPersonas, double precio){ //parametros informacion que entra
+        //inicializar las variables
         this.numeroHabitacion = numeroHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.piso = piso;
         this.capacidadPersonas = capacidadPersonas;
         this.precio = precio;
-        this.estado = estado;
+        this.estado = "Disponible";
     }
 
-    public String getNumeroHabitacion() {
+
+    public void setNumeroHabitacion(String numeroHabitacion){
+        this.numeroHabitacion = numeroHabitacion;
+    }
+    public String getNumeroHabitacion(){
         return numeroHabitacion;
     }
-
-    public void setNumeroHabitacion(String numeroHabitacion) {
-        this.numeroHabitacion = numeroHabitacion;
-    }
-
-    public String getTipoHabitacion() {
-        return tipoHabitacion;
-    }
-
-    public void setTipoHabitacion(String tipoHabitacion) {
+    public void setTipoHabitacion(String tipoHabitacion){
         this.tipoHabitacion = tipoHabitacion;
     }
-
-    public byte getPiso() {
-        return piso;
+    public String getTipoHabitacion(){
+        return tipoHabitacion;
     }
-
-    public void setPiso(byte piso) {
+    public void setPiso(byte piso){
         this.piso = piso;
     }
-
-    public byte getCapacidadPersonas() {
-        return capacidadPersonas;
+    public byte getPiso(){
+        return piso;
     }
-
-    public void setCapacidadPersonas(byte capacidadPersonas) {
+    public void setCapacidadPersonas(byte capacidadPersonas){
         this.capacidadPersonas = capacidadPersonas;
     }
-
-    public int getPrecio() {
-        return precio;
+    public byte getCapacidadPersonas(){
+        return capacidadPersonas;
     }
-
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio){
         this.precio = precio;
     }
-
-    public String getEstado() {
-        return estado;
+    public double getPrecio(){
+        return precio;
     }
-
-    public void setEstado(String estado) {
+    public void setEstado(String estado){
         this.estado = estado;
+    }
+    public String getEstado(){
+        return estado;
     }
 
     @Override
@@ -77,5 +70,21 @@ public class Habitacion {
                 ", precio=" + precio +
                 ", estado='" + estado + '\'' +
                 '}';
+    }
+
+
+    public String actualizarEstado(String nuevoEstado){
+        if (!nuevoEstado.equalsIgnoreCase("Disponible") &&
+                !nuevoEstado.equalsIgnoreCase("Reservada") &&
+                !nuevoEstado.equalsIgnoreCase("Ocupada") &&
+                !nuevoEstado.equalsIgnoreCase("Mantenimiento")) {
+            return "Error, el estado ingresado no es valido";
+        }
+        this.estado = nuevoEstado;
+        return "Estado de la habitacion actualizado con exito";
+    }
+
+    public boolean estaDisponible(){
+        return estado.equalsIgnoreCase("Disponible");
     }
 }

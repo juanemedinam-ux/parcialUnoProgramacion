@@ -2,83 +2,84 @@ package co.edu.uniquindio.edu.poo.model;
 
 import java.util.ArrayList;
 
-public class Huesped {
 
+
+public class Huesped {
     private String documento;
     private String nombre;
     private byte edad;
-    private String numero;
+    private String telefono;
     private String ciudad;
+    // declarar las relaciones
+    private ArrayList<Reserva> misReservas; // OwnedByHuesped
 
 
-    private ArrayList<Reserva> listaReservas;
-
-    public Huesped(String documento, String nombre, byte edad,
-                   String numero, String ciudad) {
+    public Huesped(String documento, String nombre, byte edad, String telefono, String ciudad){ //parametros informacion que entra
+        //inicializar las variables
         this.documento = documento;
         this.nombre = nombre;
         this.edad = edad;
-        this.numero = numero;
+        this.telefono = telefono;
         this.ciudad = ciudad;
-        this.listaReservas = new ArrayList<>();
+        misReservas = new ArrayList<>();
     }
 
-    public String getDocumento() {
+
+
+    public void setDocumento(String documento){
+        this.documento = documento;
+    }
+    public String getDocumento(){
         return documento;
     }
-
-    public void setDocumento(String documento) {
-        this.documento = documento;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre){
         this.nombre = nombre;
     }
-
-    public byte getEdad() {
-        return edad;
+    public String getNombre(){
+        return nombre;
     }
-
-    public void setEdad(byte edad) {
+    public void setEdad(byte edad){
         this.edad = edad;
     }
-
-    public String getNumero() {
-        return numero;
+    public byte getEdad(){
+        return edad;
     }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setTelefono(String telefono){
+        this.telefono = telefono;
     }
-
-    public String getCiudad() {
-        return ciudad;
+    public String getTelefono(){
+        return telefono;
     }
-
-    public void setCiudad(String ciudad) {
+    public void setCiudad(String ciudad){
         this.ciudad = ciudad;
     }
-
-    public ArrayList<Reserva> getListaReservas() {
-        return listaReservas;
+    public String getCiudad(){
+        return ciudad;
     }
-
-    public void setListaReservas(ArrayList<Reserva> listaReservas) {
-        this.listaReservas = listaReservas;
+    public void setMisReservas(ArrayList<Reserva> misReservas){
+        this.misReservas = misReservas;
+    }
+    public ArrayList<Reserva> getMisReservas(){
+        return misReservas;
     }
 
     @Override
     public String toString() {
-        return "Huesped" +
-                "documento=" + documento + '\n' +
-                ", nombre='" + nombre + '\n' +
+        return "Huesped{" +
+                "documento='" + documento + '\'' +
+                ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +
-                ", numero='" + numero + "\n" +
-                ", ciudad='" + ciudad + "\n" +
-                ", listaReservas=" + listaReservas;
+                ", telefono='" + telefono + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                '}';
+    }
+
+
+    public Reserva realizarReserva(String codigoReserva, String fechaReserva, byte numeroNoches,
+                                   byte cantidadHuespedes, String metodoPago){
+        Reserva reservaNueva = new Reserva(codigoReserva, fechaReserva, numeroNoches,
+                cantidadHuespedes, metodoPago, this);
+        misReservas.add(reservaNueva);
+        return reservaNueva;
     }
 }
