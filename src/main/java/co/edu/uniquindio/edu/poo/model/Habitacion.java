@@ -1,6 +1,7 @@
 package co.edu.uniquindio.edu.poo.model;
 
 public class Habitacion {
+
     private String numeroHabitacion;
     private String tipoHabitacion;
     private byte piso;
@@ -8,9 +9,8 @@ public class Habitacion {
     private int precio;
     private String estado;
 
-
     public Habitacion(String numeroHabitacion, String tipoHabitacion, byte piso,
-                      Byte capacidadPersonas, int precio, String estado) {
+                      byte capacidadPersonas, int precio, String estado) {
         this.numeroHabitacion = numeroHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.piso = piso;

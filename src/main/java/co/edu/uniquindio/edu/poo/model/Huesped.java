@@ -73,13 +73,12 @@ public class Huesped {
 
     @Override
     public String toString() {
-        return "Huesped{" +
-                "documento='" + documento + '\'' +
-                ", nombre='" + nombre + '\'' +
+        return "Huesped" +
+                "documento=" + documento + '\n' +
+                ", nombre='" + nombre + '\n' +
                 ", edad=" + edad +
-                ", numero='" + numero + '\'' +
-                ", ciudad='" + ciudad + '\'' +
-                ", listaReservas=" + listaReservas +
-                '}';
+                ", numero='" + numero + "\n" +
+                ", ciudad='" + ciudad + "\n" +
+                ", listaReservas=" + listaReservas;
     }
 }
