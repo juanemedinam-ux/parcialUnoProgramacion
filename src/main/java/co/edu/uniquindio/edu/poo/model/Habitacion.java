@@ -1,19 +1,17 @@
 package co.edu.uniquindio.edu.poo.model;
 
-public class Habitacion { // singular, el nombre de la clase debe ser la primer letra en mayuscula
-
+public class Habitacion {
 
     private String numeroHabitacion;
-    private String tipoHabitacion; // Individual, Doble o Suite
+    private String tipoHabitacion;
     private byte piso;
     private byte capacidadPersonas;
-    private double precio; // precio por noche
-    private String estado; // Disponible, Reservada, Ocupada o Mantenimiento
+    private double precio;
+    private String estado;
 
 
     public Habitacion(String numeroHabitacion, String tipoHabitacion, byte piso,
-                      byte capacidadPersonas, double precio){ //parametros informacion que entra
-        //inicializar las variables
+                      byte capacidadPersonas, double precio){
         this.numeroHabitacion = numeroHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.piso = piso;

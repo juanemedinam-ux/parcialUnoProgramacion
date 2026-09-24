@@ -13,7 +13,8 @@
             private String estadoReserva;
             private String metodoPago;
             private double valorTotal;
-            // declarar las relaciones
+
+
             private Huesped huesped;
             private ArrayList<Habitacion> habitacionesReservadas;
 
