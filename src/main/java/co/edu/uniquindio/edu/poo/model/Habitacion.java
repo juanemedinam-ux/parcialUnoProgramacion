@@ -60,9 +60,9 @@ public class Habitacion {
 
     @Override
     public String toString() {
-        return "Habitacion{" +
-                "numeroHabitacion='" + numeroHabitacion + '\'' +
-                ", tipoHabitacion='" + tipoHabitacion + '\'' +
+        return "Habitación{" +
+                "numeroHabitación='" + numeroHabitacion + '\'' +
+                ", tipoHabitación='" + tipoHabitacion + '\'' +
                 ", piso=" + piso +
                 ", capacidadPersonas=" + capacidadPersonas +
                 ", precio=" + precio +
@@ -79,7 +79,7 @@ public class Habitacion {
             return "Error, el estado ingresado no es valido";
         }
         this.estado = nuevoEstado;
-        return "Estado de la habitacion actualizado con exito";
+        return "Estado de la habitación actualizado con éxito";
     }
 
     public boolean estaDisponible(){

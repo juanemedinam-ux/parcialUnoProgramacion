@@ -92,12 +92,12 @@
             @Override
             public String toString() {
                 return "Reserva{" +
-                        "codigoReserva='" + codigoReserva + '\'' +
+                        "códigoReserva='" + codigoReserva + '\'' +
                         ", fechaReserva='" + fechaReserva + '\'' +
                         ", numeroNoches=" + numeroNoches +
-                        ", cantidadHuespedes=" + cantidadHuespedes +
+                        ", cantidadHuéspedes=" + cantidadHuespedes +
                         ", estadoReserva='" + estadoReserva + '\'' +
-                        ", metodoPago='" + metodoPago + '\'' +
+                        ", métodoPago='" + metodoPago + '\'' +
                         ", valorTotal=" + valorTotal +
                         ", huesped=" + (huesped != null ? huesped.getNombre() : "null") +
                         '}';
@@ -106,11 +106,11 @@
 
             public String agregarHabitacion(Habitacion habitacion){
                 if (!habitacion.estaDisponible()) {
-                    return "Error, la habitacion " + habitacion.getNumeroHabitacion() + " no esta disponible";
+                    return "Error, la habitación " + habitacion.getNumeroHabitacion() + " no esta disponible";
                 }
                 habitacionesReservadas.add(habitacion);
                 calcularValorTotal();
-                return "Habitacion agregada a la reserva con exito";
+                return "Habitación agregada a la reserva con éxito";
             }
 
 
@@ -133,7 +133,7 @@
                 for (Habitacion h : habitacionesReservadas) {
                     h.actualizarEstado("Reservada");
                 }
-                return "Reserva confirmada con exito";
+                return "Reserva confirmada con éxito";
             }
 
 

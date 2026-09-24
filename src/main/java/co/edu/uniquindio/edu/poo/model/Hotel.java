@@ -15,7 +15,7 @@ public class Hotel {
     private int cantidadReservas;
     private char[][] matrizOcupacion;
 
-    private static final String[] DIAS = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
+    private static final String[] DIAS = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"};
 
 
     public Hotel(String nombre, String nit, String direccion, String telefono,
@@ -96,7 +96,7 @@ public class Hotel {
                 ", nit='" + nit + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
-                ", cantidadHuespedes=" + listaHuespedes.size() +
+                ", cantidadHuéspedes=" + listaHuespedes.size() +
                 ", cantidadHabitaciones=" + cantidadHabitaciones +
                 ", cantidadReservas=" + cantidadReservas +
                 '}';
@@ -107,11 +107,11 @@ public class Hotel {
         String mensaje = "";
         Huesped buscado = buscarHuespedPorDocumento(documento);
         if (buscado != null) {
-            return "Error, el huesped que usted desea registrar ya se encuentra registrado";
+            return "Error, el huésped que usted desea registrar ya se encuentra registrado";
         } else {
             Huesped huespedNuevo = new Huesped(documento, nombre, edad, telefono, ciudad);
             listaHuespedes.add(huespedNuevo);
-            mensaje = "Huesped registrado con exito";
+            mensaje = "Huésped registrado con éxito";
         }
         return mensaje;
     }
@@ -138,14 +138,14 @@ public class Hotel {
 
     public String registrarHabitacion(String numero, String tipo, byte piso, byte capacidad, double precio){
         if (buscarHabitacion(numero) != null) {
-            return "Error, la habitacion que usted desea registrar ya se encuentra registrada";
+            return "Error, la habitación que usted desea registrar ya se encuentra registrada";
         }
         if (cantidadHabitaciones >= habitaciones.length) {
             return "Error, el hotel ya alcanzo su capacidad maxima de habitaciones";
         }
         habitaciones[cantidadHabitaciones] = new Habitacion(numero, tipo, piso, capacidad, precio);
         cantidadHabitaciones++;
-        return "Habitacion registrada con exito";
+        return "Habitación registrada con éxito";
     }
 
     public Habitacion buscarHabitacion(String numero){
@@ -186,8 +186,8 @@ public class Hotel {
         return "Habitaciones disponibles: " + disponibles +
                 "\nHabitaciones ocupadas: " + ocupadas +
                 "\nHabitaciones en mantenimiento: " + mantenimiento +
-                "\nHabitacion con mayor precio: " + (masCara != null ? masCara.getNumeroHabitacion() + " ($" + masCara.getPrecio() + ")" : "N/A") +
-                "\nHabitacion con menor precio: " + (masBarata != null ? masBarata.getNumeroHabitacion() + " ($" + masBarata.getPrecio() + ")" : "N/A");
+                "\nHabitación con mayor precio: " + (masCara != null ? masCara.getNumeroHabitacion() + " ($" + masCara.getPrecio() + ")" : "N/A") +
+                "\nHabitación con menor precio: " + (masBarata != null ? masBarata.getNumeroHabitacion() + " ($" + masBarata.getPrecio() + ")" : "N/A");
     }
 
 
@@ -197,7 +197,7 @@ public class Hotel {
         }
         reservas[cantidadReservas] = reserva;
         cantidadReservas++;
-        return "Reserva registrada con exito";
+        return "Reserva registrada con éxito";
     }
 
     public Reserva buscarReserva(String codigoReserva){
@@ -235,10 +235,10 @@ public class Hotel {
 
     public String marcarOcupacion(int posicionHabitacion, int dia, char estado){
         if (posicionHabitacion < 0 || posicionHabitacion >= cantidadHabitaciones || dia < 0 || dia > 6) {
-            return "Error, la posicion ingresada esta fuera de rango";
+            return "Error, la posición ingresada esta fuera de rango";
         }
         matrizOcupacion[posicionHabitacion][dia] = estado;
-        return "Ocupacion actualizada con exito";
+        return "Ocupación actualizada con éxito";
     }
 
 
@@ -268,8 +268,8 @@ public class Hotel {
             }
         }
 
-        return "Dia con mayor ocupacion: " + DIAS[diaMayor] + " (" + ocupadasPorDia[diaMayor] + " habitaciones)" +
-                "\nDia con menor ocupacion: " + DIAS[diaMenor] + " (" + ocupadasPorDia[diaMenor] + " habitaciones)" +
+        return "Dia con mayor ocupación: " + DIAS[diaMayor] + " (" + ocupadasPorDia[diaMayor] + " habitaciones)" +
+                "\nDia con menor ocupación: " + DIAS[diaMenor] + " (" + ocupadasPorDia[diaMenor] + " habitaciones)" +
                 "\nTotal de habitaciones ocupadas durante la semana: " + totalOcupadas;
     }
 }

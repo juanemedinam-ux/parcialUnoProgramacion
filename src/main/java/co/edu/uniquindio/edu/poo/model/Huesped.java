@@ -11,10 +11,10 @@ public class Huesped {
     private String telefono;
     private String ciudad;
     // declarar las relaciones
-    private ArrayList<Reserva> misReservas; // OwnedByHuesped
+    private ArrayList<Reserva> misReservas; // OwnedByHuésped
 
 
-    public Huesped(String documento, String nombre, byte edad, String telefono, String ciudad){ //parametros informacion que entra
+    public Huesped(String documento, String nombre, byte edad, String telefono, String ciudad){ //parámetros información que entra
         //inicializar las variables
         this.documento = documento;
         this.nombre = nombre;
@@ -65,7 +65,7 @@ public class Huesped {
 
     @Override
     public String toString() {
-        return "Huesped{" +
+        return "Huésped{" +
                 "documento='" + documento + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +
